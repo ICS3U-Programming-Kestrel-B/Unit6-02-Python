@@ -12,8 +12,15 @@ import random
 
 
 def max_value(random_num_list):
-    if random_num_list[0] > random_num_list[1]:
-        
+    # initializing max_num
+    max_num = -1
+    # if random_num_list[0] > random_num_list[1]:
+    for counter in range(10):
+        current_num = random_num_list[counter]
+        if current_num > max_num:
+            max_num = current_num
+    # returning max_num
+    return max_num
 
 
 def main():
@@ -34,8 +41,11 @@ def main():
         # displaying generated number
         print("{} has been generated.".format(random_num))
 
+    # calling function
+    true_max = max_value(random_num_list)
+
     # displaying results
-    print("The highest number is {}.".format(avg))
+    print("The highest number is {}.".format(true_max))
 
 
 if __name__ == "__main__":
